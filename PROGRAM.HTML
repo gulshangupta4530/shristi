@@ -1,0 +1,152 @@
+<html>
+<head>
+<title>C Programs</title>
+  
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar {
+    background: #9a7a7a;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+  }
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+  }
+
+  h1 {
+    text-align: center;
+    background: #9a5c42;
+    color: white;
+    padding: 15px;
+    margin: 0;
+  }
+
+  .program {
+    background: white;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 800px;
+    box-shadow: 0px 2px 6px rgba(198, 80, 80, 0.2);
+  }
+
+  .program h2 {
+    color: #af814c;
+    margin-top: 0;
+  }
+
+  .question {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  pre {
+    background: #272822;
+    color: #f8f8f2;
+    padding: 10px;
+    border-radius: 5px;
+   /*overflow-x: auto;*/
+  }
+</style>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <a href="file:///C:/Users/amish/Desktop/C/basic.html">Basic Input-Output</a>
+    <a href="">Loops</a>
+    <a href="">Switch</a>
+  </div>
+
+  <h1>C PROGRAMS</h1>
+
+  <!-- Basic I/O Section -->
+  <div id="basic" class="program">
+    <h2>Basic Input-Output Questions</h2>
+
+    <p class="question">1. Write a program to print the message: Today I made my first C Program.</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+void main() {
+  printf("Today I made my first C program.");
+  getch();
+}
+    </pre>
+    <h3>Output:</h3>
+    <pre>
+Today I made my first C program.
+    </pre>
+  </div>
+
+  <div class="program">
+    <p class="question">2. Write a program to read a character from the keyboard and display it on the screen.</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+void main() {
+  char ch;
+  clrscr();
+  printf("Type a character: ");
+  scanf("%c", &ch);
+  printf("The character is: %c", ch);
+  getch();
+}
+    </pre>
+    <h3>Output:</h3>
+    <pre>
+Type a character: k
+The character is: k
+    </pre>
+  </div>
+
+  <div class="program">
+    <p class="question">3. Write a program to print your name at the center of the first line.</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+void main() {
+  printf("\t\t\tSRISHTI\n");
+  getch();
+}
+    </pre>
+    <h3>Output:</h3>
+    <pre>
+                        SRISHTI
+    </pre>
+  </div>
+
+  <div class="program">
+    <p class="question">4. Write a program to store a single quote and print that variable to show single quote on output screen.</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+void main() {
+  char ch = '\'';
+  clrscr();
+  printf("Single quote is: %c", ch);
+  getch();
+}
+    </pre>
+    <h3>Output:</h3>
+    <pre>
+Single quote is: '
+    </pre>
+  </div>
+
+  
+
+</body>
+</html>

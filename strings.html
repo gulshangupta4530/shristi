@@ -1,0 +1,623 @@
+<html>
+<head>
+<title>C CODE HUB</title>
+  
+<style>
+  body {
+
+    font-family: Arial, sans-serif;
+    background: #a5bbdc;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar {
+    background: #7c2c2c;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+  }
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+  }
+
+  h1 {
+    text-align: center;
+    background: #967643;
+    color: white;
+    padding: 15px;
+    margin: 0;
+  }
+
+  .program {
+    background: white;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 800px;
+    box-shadow: 0px 2px 6px rgba(196, 125, 125, 0.2);
+  }
+
+  .program h2 {
+    color: #c27f41;
+    margin-top: 0;
+  }
+
+  .question {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  pre {
+    background: #565e31;
+    color: #f8f8f2;
+    padding: 10px;
+    border-radius: 5px;
+   /*overflow-x: auto;*/
+  }
+</style>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <a href="index.html">HOME</a>
+    <a href="ABOUT.html">about</a>
+    <a href="contact.html">contact</a>
+
+  </div>
+
+  <h1>C PROGRAMS</h1>
+<header>
+    <h1>STRINGS</h1>
+    <a href="index.html" class="back">⬅ Back to Home</a>
+  </header>
+  <!-- Basic I/O Section -->
+  <div id="STRINGS" class="program">
+    <h2>STRINGS Questions</h2>
+    <p class="question">1. Enter a string from user and convert in uppercase ?</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;Strings.h&gt;
+
+void main(){
+char str[50];
+int i;
+printf("Enter any sentence you like: ");
+gets(str);
+for(i=0;str[i];i++){
+if(str[i]>='a'&& str[i]<='z'){
+str[i]=str[i]-32;
+}
+}
+printf("Here is the uppercase version of it: %s",str);
+}
+
+    </pre>
+    <h3>Output:</h3>
+    <pre>
+Enter any sentence you like: sarah
+Here is the uppercase version of it: SARAH
+    </pre>
+  </div>
+
+  <div class="program">
+    <p class="question">2. Enter a string from user and convert into lowercase ?</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;Strings.h&gt;
+
+void main(){
+char str[50];
+int i;
+printf("Enter any sentence you like: ");
+gets(str);
+for(i=0;str[i];i++){
+if(str[i]>='A'&& str[i]<='Z'){
+str[i]=str[i]+32;
+}
+}
+printf("Here is the uppercase version of it: %s",str);
+}
+    </pre>
+    <h3>Output:</h3>
+    <pre>
+Enter any sentence you like: SARAHH
+Here is the uppercase version of it: sarahh
+    </pre>
+  </div>
+
+  <div class="program">
+    <p class="question">3. Enter a string from user and convert into sentence case ?</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;Strings.h&gt;
+void main(){
+char str[50];
+int i;
+printf("Enter any sentence you like: ");
+gets(str);
+if(str[0]>='a' && str[0]<='z')str[0]=str[0]-32;
+for(i=0;str[i];i++){
+if(str[i-1]=='.' && str[i]>='a'&& str[i]<='z'){
+str[i]=str[i]-32;
+}
+}
+printf("Here is the uppercase version of it: %s",str);
+}
+
+    </pre>
+    <h3>Output:</h3>
+    <pre>
+Enter any sentence you like: abc ABC
+
+Here is the uppercase version of it: Abc ABC
+  </div>
+
+  <div class="program">
+    <p class="question">4. Enter a string from user and convert into title case ?</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+void main(){
+char str[50];
+int i;
+printf("Enter any sentence you like: ");
+gets(str);
+if(str[0]>='a' && str[0]<='z')str[0]=str[0]-32;
+for(i=0;str[i];i++){
+if( (str[i-1]==' ' && str[i]>='a'&& str[i]<='z')  || (str[i-1]=='.' && str[i]>='a'&& str[i]<='z')){
+str[i]=str[i]-32;
+}
+}
+printf("Here is the uppercase version of it: %s",str);
+}
+</pre>
+    <h3>Output:</h3>
+    <pre>
+Enter any sentence you like: abc
+Here is the uppercase version of it: Abc
+    </pre>
+  </div>
+
+  <div class="program">
+    <p class="question">5. Enter a string from user and convert into toggle case ?</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;Strings.h&gt;
+void main(){
+char a[100];
+int i;
+printf("enter str: ");
+gets(a);
+for(i=0;a[i]!='\0';i++){
+if(a[i]>='a'&&a[i]<='z')
+a[i]=a[i]-32;
+else if(a[i]>='A'&&a[i]<='Z')
+a[i]=a[i]+32;
+}
+printf("toggle: %s",a);
+}
+    </pre>
+    <h3>Output:</h3>
+    <pre>
+enter str: abc ABC
+toggle: ABC abc
+    </pre>
+  </div>
+
+  <div class="program">
+    <p class="question">6. Enter a string from user and final length of the string ?</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;Strings.h&gt;
+void main(){
+char str[50];
+int l;
+
+printf("Enter the string you like: ");
+gets(str);
+l=strlen(str);
+printf("The final length of your string is %d",l);
+
+}
+</pre>
+    <h3>Output:</h3>
+    <pre>
+Enter the string you like: abcde
+The final length of your string is 5
+    </pre>
+  </div>
+
+  <div class="program">
+    <p class="question">7. Enter a string from user and compare those string ?</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;Strings.h&gt;
+void main(){
+char str1[50],str2[50];
+int l;
+printf("Enter the string 1: ");
+gets(str1);
+printf("Enter the string 2: ");
+gets(str2);
+l=strcmp(str1,str2);
+if(l==0)printf("Both strings are same");
+else printf("Both strings are different");
+}
+</pre>
+    <h3>Output:</h3>
+    <pre>
+Enter the string 1: abc
+Enter the string 2: def
+Both strings are different
+    </pre>
+  </div>
+
+  <div class="program">
+    <p class="question">8. Enter a string from user and concatenate the string ?</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;strings.h&gt;
+void main(){
+char str1[50],str2[50];
+int l;
+printf("Enter the string1: ");
+gets(str1);
+printf("Enter the string2: ");
+gets(str2);
+strcat(str1,str2);
+printf("Your final string is %s",str1);
+}
+</pre>
+    <h3>Output:</h3>
+    <pre>
+Enter the string1: abc
+Enter the string2: def
+Your final string is abcdef
+    </pre>
+  </div>
+
+  <div class="program">
+    <p class="question">9. Enter a string from user and copy that string into another string </p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;strings.h&gt;
+void main(){
+char str1[50],str2[50];
+int l;
+
+printf("Enter the string1 you like: ");
+gets(str1);
+strcpy(str2,str1);
+printf("copied string2:  %s",str2);
+
+}
+</pre>
+    <h3>Output:</h3>
+    <pre>
+Enter the string1 you like: hello
+copied string2:  hello
+    </pre>
+  </div>
+  
+<div class="program">
+    <p class="question">10. Enter the string from user ,enter a number from user ,if the user enter 0 then you will print first character of string ,if the user enter 1 then you will print second character of string ,if user enter 2 then you will print third character of string ,if user enter 3 then you point fourth character of string and if out of string then you will print out of bound ?</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;strings.h&gt;
+void main(){
+char str[50];
+int l,d;
+printf("Enter the string you like: ");
+gets(str);
+l=strlen(str);
+printf("which character you want you print(index): ");
+scanf("%d",&d);
+if (d<0) printf("Please enter a number greater than or equal to 0 only");
+else if(d<l)printf("%c",str[d]);
+else printf("Out of bound");
+}
+</pre>
+    <h3>Output:</h3>
+    <pre>
+Enter the string you like: hello
+which character you want you print(index): 1
+e
+    </pre>
+  </div>
+  
+<div class="program">
+    <p class="question">11. Enter the string from user and print each character in new line ?</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;Strings.h&gt;
+void main(){
+char str[50];
+int i;
+printf("Enter the string: ");
+gets(str);
+printf("Here are each character in new line:\n");
+for(i=0;str[i];i++){
+printf("%c\n",str[i]);
+}
+}
+</pre>
+    <h3>Output:</h3>
+    <pre>
+Enter the string: hello
+Here are each character in new line:
+h
+e
+l
+l
+o
+    </pre>
+  </div>
+  
+  <div class="program">
+    <p class="question">12. Enter the string from user and copy reverse order into another string ?</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;strings.h&gt;
+void main(){
+char str1[50],str2[50];
+int i,l;
+printf("Enter the string 1: ");
+gets(str1);
+l=strlen(str1);
+for(i=0;str1[i];i++){
+str2[i]=str1[l-1-i];
+}
+str2[i]=0;
+printf("Here is the string2(reverese of string1): %s",str2);
+
+}
+
+</pre>
+    <h3>Output:</h3>
+    <pre>
+Enter the string 1: hello
+Here is the string2(reverese of string1): olleh
+    </pre>
+  </div>
+
+  <div class="program">
+    <p class="question">13. Enter two string from user and print difference each character ?</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;strings.h&gt;
+void main(){
+char a[100],b[100];
+int i;
+printf("enter 1st str: ");
+gets(a);
+printf("enter 2nd str: ");
+gets(b);
+for(i=0;a[i]!='\0'&&b[i]!='\0';i++)
+printf("%d ",a[i]-b[i]);
+}
+}
+</pre>
+    <h3>Output:</h3>
+    <pre>
+enter 1st str: hello
+enter 2nd str: bye
+6 -20 7
+    </pre>
+  </div>
+  
+  
+  <div class="program">
+    <p class="question">14. Enter the string from user and enter a character , it is exist or not ?</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;strings.h&gt;
+void main(){
+char a[100],ch;
+int i,found=0;
+printf("enter str: ");
+gets(a);
+printf("enter char: ");
+scanf("%c",&ch);
+for(i=0;a[i]!='\0';i++){
+if(a[i]==ch){
+found=1;
+break;
+}
+}
+if(found==1)
+printf("exist");
+else
+printf("not exist");
+}
+</pre>
+    <h3>Output:</h3>
+    <pre>
+enter str: hello
+enter char: h
+exist
+    </pre>
+  </div>
+
+  
+  <div class="program">
+    <p class="question">15. Enter the string from user and enter a character if it is exist then print the bound number?</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;strings.h&gt;
+void main(){
+char a[100],ch;
+int i,found=-1;
+printf("enter str: ");
+gets(a);
+printf("enter char: ");
+scanf("%c",&ch);
+for(i=0;a[i]!='\0';i++){
+if(a[i]==ch){
+found=i;
+break;
+}
+}
+if(found!=-1)
+printf("bound %d",found);
+else
+printf("not exist");
+}
+</pre>
+    <h3>Output:</h3>
+    <pre>
+enter str: hello
+enter char: e
+bound 1
+    </pre>
+  </div>
+
+  
+  <div class="program">
+    <p class="question">16. Enter the string from user and count all vowels ?</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;strings.h&gt;
+void main(){
+char str[50];
+int i,v=0;
+printf("Enter the string you like: ");
+gets(str);
+for(i=0;str[i];i++){
+if((str[i]=='a')||(str[i]=='e')||(str[i]=='i')||(str[i]=='o')||(str[i]=='u')||(str[i]=='A')||(str[i]=='E')||(str[i]=='I')||(str[i]=='O')||(str[i]=='U'))
+v+=1;
+}
+printf("Total number of vowels in string: %d",v);
+}
+</pre>
+    <h3>Output:</h3>
+    <pre>
+Enter the string you like: helloo
+Total number of vowels in string: 3
+    </pre>
+  </div>
+
+  
+  <div class="program">
+    <p class="question">17. Enter the string from user and enter bound number and print character on that bound ?</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;strings.h&gt;
+void main(){
+char str[50];
+int i,b=0;
+printf("Enter the string you like: ");
+gets(str);
+printf("Enter the bound number: ");
+scanf("%d",&b);
+printf("The character on the bound is : %c",str[b]);
+}
+</pre>
+    <h3>Output:</h3>
+    <pre>
+Enter the string you like: hello
+Enter the bound number: 1
+The character on the bound is : e
+    </pre>
+  </div>
+
+  
+  <div class="program">
+    <p class="question">18. String palindrome example (using reverse) ?</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;strings.h&gt;
+void main(){
+char str1[50],str2[50];
+int i,l;
+printf("Pallindrome are words that spells the same forward and backward for example \nNITIN,NAMAN and MOM\n");
+printf("Enter any word to check if it is a pallindrome: ");
+gets(str1);
+l=strlen(str1);
+for(i=0;str1[i];i++){
+str2[i]=str1[l-1-i];
+}
+str2[i]=0;
+l=strcmp(str1,str2);
+if(l==0)printf("That is a pallindrome");
+else printf("That is not a pallindrome");
+}
+</pre>
+    <h3>Output:</h3>
+    <pre>
+Pallindrome are words that spells the same forward and backward for example
+NITIN,NAMAN and MOM
+Enter any word to check if it is a pallindrome: sus
+That is a pallindrome
+    </pre>
+  </div>
+
+  
+  <div class="program">
+    <p class="question">19. Enter the data from user the data consist of roll no. ,name ,class , marks of 5 subjects ?</p>
+    <h3>Code:</h3>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;strings.h&gt;
+void main(){
+char name[25],roll[7],clas[7],mark[5][2];
+printf("Enter all the details below\n");
+printf("Enter your name: ");
+gets(name);
+printf("Enter the roll number: ");
+gets(roll);
+printf("Enter the marks of these 5 subject:\n");
+printf("English: ");
+gets(mark[0]);
+printf("Physics: ");
+gets(mark[1]);
+printf("Chemistry: ");
+gets(mark[2]);
+printf("Biology: ");
+gets(mark[3]);
+printf("physical Education: ");
+gets(mark[4]);
+printf("Press any key to submit");
+}
+</pre>
+    <h3>Output:</h3>
+    <pre>
+Enter all the details below
+Enter your name: sarah
+Enter the roll number: 4213
+Enter the marks of these 5 subject:
+English: 90
+Physics: 90
+Chemistry: 90
+Biology: 90
+physical Education: 90
+Press any key to submit
+    </pre>
+  </div>
+
+  <div class="btn-container">
+    <a href="../website/c_program.html" class="btn">Home</a>
+</div>
+
+</body>
